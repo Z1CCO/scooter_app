@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.grey,
+      backgroundColor: AppColors.white,
       body: screens[currentIndex],
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),

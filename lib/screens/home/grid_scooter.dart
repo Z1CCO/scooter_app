@@ -4,7 +4,6 @@ import 'package:scooter_app/screens/home/item/edititem.dart';
 import 'package:scooter_app/theme/appcolors.dart';
 import 'package:scooter_app/screens/home/item/item.dart';
 
-
 class GridScooter extends StatefulWidget {
   final Map<String, dynamic> user;
   const GridScooter({super.key, required this.user});
@@ -38,7 +37,6 @@ class _GridScooterState extends State<GridScooter> {
         );
   }
 
-
   List<String> posts = [];
   @override
   Widget build(BuildContext context) {
@@ -60,7 +58,7 @@ class _GridScooterState extends State<GridScooter> {
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
-                childAspectRatio: 2 / 3,
+                childAspectRatio: 2 / 3.2,
                 mainAxisSpacing: 0,
                 crossAxisCount: 2,
               ),
@@ -77,7 +75,8 @@ class _GridScooterState extends State<GridScooter> {
                     : () {},
                 child: MyItemWidget(
                   category: 'Skuter',
-                  id: posts[index], name: widget.user['name'],
+                  id: posts[index],
+                  name: widget.user['name'],
                 ),
               ),
             ),
