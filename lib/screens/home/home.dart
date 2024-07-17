@@ -6,6 +6,8 @@ import 'package:scooter_app/screens/home/grid_scooter.dart';
 import 'package:scooter_app/screens/home/grid_spareparts.dart';
 import 'package:scooter_app/screens/home/masterscreen.dart';
 import 'package:scooter_app/screens/home/search.dart';
+import 'package:scooter_app/screens/home/walletscreen.dart';
+import 'package:scooter_app/screens/home/widgets/carouselpopular.dart';
 import 'package:scooter_app/screens/profile/widget/language_constants.dart';
 import 'package:scooter_app/theme/appcolors.dart';
 import 'package:scooter_app/theme/textstyles.dart';
@@ -96,6 +98,24 @@ class _HomeState extends State<Home> {
                             child: Image.asset('assets/images/logo.png'),
                           ),
                           const Spacer(),
+                          data!['admin']
+                              ? GestureDetector(
+                                  onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => WalletScreen(),
+                                    ),
+                                  ),
+                                  child: const MyCircleContainerWidget(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: Icon(
+                                          Icons.account_balance_wallet_rounded),
+                                    ),
+                                  ),
+                                )
+                              : SizedBox(),
+                          const SizedBox(width: 12),
                           GestureDetector(
                             onTap: () => Navigator.push(
                               context,
@@ -115,7 +135,6 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 18.0),
                       child: Row(
@@ -179,6 +198,10 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 10),
+                    CarouselPopularWidget(
+                      userAdmin: data!['admin'],
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(18, 24, 18, 0),
                       child: Row(
@@ -190,7 +213,6 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 30),
                     _buildBody(data),
                   ],
                 ),
