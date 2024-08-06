@@ -69,6 +69,7 @@ class _WalletScreenState extends State<WalletScreen> {
               final cost = post['cost'] ?? 'No cost';
 
               return ListTile(
+                leading: Image(image: NetworkImage(post['image'])),
                 title: Text(name),
                 subtitle: Text(timestamp.toString()),
                 trailing: Text(cost.toString()),

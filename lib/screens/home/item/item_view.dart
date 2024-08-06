@@ -309,7 +309,7 @@ class _ItemViewState extends State<ItemView> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  '⭐ ${widget.data['star']}',
+                  '⭐ ${widget.data['star'] != 0 ? widget.data['star'] / widget.data['costnumber'] : 0} (${widget.data['costnumber']})',
                   style: const TextStyle(
                     fontSize: 25,
                     fontFamily: 'Kanit',

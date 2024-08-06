@@ -76,7 +76,7 @@ class MyItemWidget extends StatelessWidget {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            '${data['star'] == null ? data['star'] / data['costnumber'] : 0} (${data['costnumber']})',
+                            '${data['star'] != 0 ? data['star'] / data['costnumber'] : 0} (${data['costnumber']})',
                             style: const TextStyle(color: Colors.grey),
                           ),
                         ],

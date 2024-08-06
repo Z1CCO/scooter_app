@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                                   onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (_) => WalletScreen(),
+                                      builder: (_) => const WalletScreen(),
                                     ),
                                   ),
                                   child: const MyCircleContainerWidget(
@@ -114,7 +114,7 @@ class _HomeState extends State<Home> {
                                     ),
                                   ),
                                 )
-                              : SizedBox(),
+                              : const SizedBox(),
                           const SizedBox(width: 12),
                           GestureDetector(
                             onTap: () => Navigator.push(
